@@ -49,11 +49,10 @@ provider:
 #  environment:
 #    variable1: value1
 
-# you can add packaging information here
-#package:
-#  include:
-#    - include-me.js
-#    - include-me-dir/**
+package:
+  include:
+    - features/**
+    - models/**
 #  exclude:
 #    - exclude-me.js
 #    - exclude-me-dir/**
