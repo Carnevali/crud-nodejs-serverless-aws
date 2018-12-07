@@ -15,6 +15,12 @@
             "request": "launch",
             "name": "Create Debug",
             "program": "${workspaceFolder}/features/create.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Read Debug",
+            "program": "${workspaceFolder}/features/read.js"
         }
     ]
 }

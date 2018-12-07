@@ -1,8 +1,10 @@
+'use strict';
+
 const Sequelize = require('sequelize');
 
 //Be careful if you are conneting to RDS to AWS. You shoud to double check if your VPC is allow everyone to connect in your database 
 // or create a rule that you give permissions only people that you want
-const sequelize = new Sequelize('admin-instance', 'serverless_admin', 'serverless_admin', {
+const sequelize = new Sequelize('crud_nodejs_serverless_aws', 'serverless_admin', 'serverless_admin', {
     dialect: 'mysql',
     host: 'admin-instance.cxytgt9dqiz9.us-west-2.rds.amazonaws.com',
     port: 3306

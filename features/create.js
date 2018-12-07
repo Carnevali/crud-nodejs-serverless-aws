@@ -1,3 +1,5 @@
+'use strict';
+
 const db = require('../db');
 
 module.exports.createTodo = (event, context, callback) => {
@@ -7,7 +9,7 @@ module.exports.createTodo = (event, context, callback) => {
         task: body.task 
     }).then(todo => {
         const response = {
-            statusCode: 200,
+            statusCode: 201,
             body: JSON.stringify({
                 todo: todo
             }),
@@ -15,7 +17,12 @@ module.exports.createTodo = (event, context, callback) => {
 
         return callback(null, response);
     }).catch(error => {
-        console.log(new Error(`Error when we try to create a new item: ${error}`))
+        return callback(null, {
+            statusCode: 500,
+            body: JSON.stringify({
+                error: `There was an error creating your todo`
+            })
+        });
     });
 };
 

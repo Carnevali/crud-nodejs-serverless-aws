@@ -58,11 +58,18 @@ package:
 #    - exclude-me-dir/**
 
 functions:
+  listTodos:
+    handler: features/read.listTodos
+    events:
+      - http:
+          path: todos
+          method: get
+
   getTodo:
     handler: features/read.getTodo
     events:
       - http:
-          path: todo
+          path: todo/{id}
           method: get
 
   createTodo:
@@ -76,15 +83,15 @@ functions:
     handler: features/delete.deleteTodo
     events:
       - http:
-          path: todo
+          path: todo/{id}
           method: delete
 
   updateTodo:
-    handler: features/upate.updateTodo
+    handler: features/update.updateTodo
     events:
       - http:
-          path: todo
-          method: put
+          path: todo/{id}
+          method: patch
 
 #    The following are a few example events you can configure
 #    NOTE: Please make sure to change your handler code to work with those events

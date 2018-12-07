@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = (sequelize, DataTypes) => {
     return sequelize.define('todo', {
         id: {
@@ -12,7 +14,7 @@ module.exports = (sequelize, DataTypes) => {
         completed: {
             type: DataTypes.BOOLEAN,
             defaultValue: false
-        },
+        }/*,
         create_at: {
             type: DataTypes.DATE,
             defaultValue: new Date(),
@@ -25,7 +27,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         delete_at: {
             type: DataTypes.DATE
-        }
+        }*/
     }, 
     {
         paranoid: true,
